@@ -18,3 +18,5 @@ function renderMonsters(monsters) {
     //removes duplicate
     document.querySelector("#name > p:nth-child(3)").remove()
 }
+
+const yo = "yoyo";
