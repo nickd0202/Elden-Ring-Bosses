@@ -6,7 +6,8 @@ function eldenRingFetch() {
 eldenRingFetch();
 
 function renderMonsters(monsters) {
-    monsters.forEach((monster) =>  {
+    monsters.data.forEach((monster) =>  {
         console.log(monster);
+        monsterImage = 
     })
 }
