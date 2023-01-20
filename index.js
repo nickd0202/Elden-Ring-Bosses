@@ -23,3 +23,5 @@ function renderMonsters(monsters) {
     document.querySelector("#all > div:nth-child(3) > p").remove()
 }
 
+
+

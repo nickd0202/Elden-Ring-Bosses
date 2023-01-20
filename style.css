@@ -9,6 +9,11 @@
 .name {
     text-align: center;
 }
-/* body {
-      background-color: lightblue;
-    } */
+
+
+
+    body {
+        background-image: url("https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg");
+        background-size: 100%;
+        color: rgb(216, 37, 37);
+    }
