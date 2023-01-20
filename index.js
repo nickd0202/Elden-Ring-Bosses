@@ -7,16 +7,19 @@ function eldenRingFetch() {
 eldenRingFetch();
 
 
-const monsterName = document.querySelector("#name")
+const allMonsters = document.querySelector("#all")
 function renderMonsters(monsters) {
     monsters.data.forEach((monster) =>  {
         const p = document.createElement('p')
+        const div = document.createElement('div')
         p.textContent = monster.name
         console.log(p)
-        monsterName.append(p)
+        p.className = "name"
+        div.className = "card"
+        div.append(p)
+        allMonsters.append(div) 
     })
     //removes duplicate
-    document.querySelector("#name > p:nth-child(3)").remove()
+    document.querySelector("#all > div:nth-child(3) > p").remove()
 }
 
-const yo = "yoyo";
