@@ -18,7 +18,7 @@ body {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px;
+    border-radius: 25px;
   }
   .card:hover {
     box-shadow: 0 12px 24px 0 rgba(255, 0, 0, 0.747);
@@ -37,7 +37,7 @@ body {
     color: white;
   }
   
-  /*Talk to Nick about the transition with the title as well as the cards. See what he thinks.*/
+  
   .title:hover {
     color: red;
     text-shadow:  7px rgb(201, 41, 41),
@@ -47,7 +47,10 @@ body {
     transition: 3s;
   }
 
-  /* .resizedTextbox { */
-    /* width: 10px; height: 20px; */
-  /* } */
+.large-image{
+  width: 400px;
+height: 550px;
+border-radius: 25px;
+float: left;
 
+}
