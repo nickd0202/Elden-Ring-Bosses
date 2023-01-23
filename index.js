@@ -28,6 +28,8 @@ function renderMonsters(monsters) {
         div.append(img)
         div.append(contain)
         allMonsters.append(div) 
+
+        
     })
     //removes duplicate
     document.querySelector("#all > div:nth-child(3)").remove()
