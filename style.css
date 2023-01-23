@@ -40,7 +40,7 @@ body {
     color: white;
   }
   
-  
+  /* change to js */
   .title:hover {
     color: red;
     text-shadow:  7px rgb(201, 41, 41),
