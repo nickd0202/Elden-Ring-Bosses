@@ -10,12 +10,12 @@ eldenRingFetch();
 const displayImage = document.querySelector("body > div.display > div.img-display > img");
 
 
-const statsName = document.querySelector("body > div.display > div.stats > h3:nth-child(1) > p")
-const statsRegion = document.querySelector("body > div.display > div.stats > h3:nth-child(2) > p")
-const statsDes = document.querySelector("body > div.display > div.stats > h3:nth-child(3) > p")
-const statsLocation = document.querySelector("body > div.display > div.stats > h3:nth-child(4) > p")
-const statsDrop = document.querySelector("body > div.display > div.stats > h3:nth-child(5) > p")
-const statsHealth = document.querySelector("body > div.display > div.stats > h3:nth-child(6) > p")
+const statsName = document.querySelector("body > div.display > div.stats > p.name2")
+const statsRegion = document.querySelector("body > div.display > div.stats > p.region")
+const statsDes = document.querySelector("body > div.display > div.stats > p.description")
+const statsLocation = document.querySelector("body > div.display > div.stats > p.location")
+const statsDrop = document.querySelector("body > div.display > div.stats > p.drop")
+const statsHealth = document.querySelector("body > div.display > div.stats > p.health")
 
 
 
