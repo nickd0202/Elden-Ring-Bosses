@@ -51,8 +51,23 @@ body {
   }
 
   .stats {
-    background-color: rgb(213, 169, 169);
+    background-color: rgb(245, 239, 239);
+    float: right;
+    width: 800px;
+    margin: 35px;
+    padding: 3px 20px;
+    text-align: left;
+    border-radius: 5px;
+    border: 0px;
+    left: 50px;
+  }
 
+  .large-image{
+    width: 400px;
+    height: 550px;
+    border-radius: 5px;
+    float:left;
+    margin: 35px;
   }
 
 
