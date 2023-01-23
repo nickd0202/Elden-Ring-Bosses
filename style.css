@@ -51,7 +51,7 @@ body {
   }
 
   .stats {
-    background-color: rgb(245, 239, 239);
+    color: red;
     float: right;
     width: 800px;
     margin: 35px;
@@ -60,6 +60,8 @@ body {
     border-radius: 5px;
     border: 0px;
     left: 50px;
+    display:
+
   }
 
   .large-image{
