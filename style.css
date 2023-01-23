@@ -23,15 +23,31 @@ body {
   .card:hover {
     box-shadow: 0 12px 24px 0 rgba(255, 0, 0, 0.747);
     scale: 110%;
-    }
+    transition: 1s;
+    
+  }
   .container {
     padding: 2px 16px;
     background-color: white;
     border-radius: 5px;
   }
 
-  .title { 
+  .title {
     text-align: center;
     color: white;
+  }
+  
+  /*Talk to Nick about the transition with the title as well as the cards. See what he thinks.*/
+  .title:hover {
+    color: red;
+    text-shadow:  7px rgb(201, 41, 41),
+    0 0 10px rgb(196, 29, 29),
+    0 0 21px rgb(198, 31, 31);
+    scale: 125%;
+    transition: 3s;
+  }
 
-    }
+  /* .resizedTextbox { */
+    /* width: 10px; height: 20px; */
+  /* } */
+

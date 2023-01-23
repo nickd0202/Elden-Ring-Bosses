@@ -5,31 +5,34 @@ function eldenRingFetch() {
     .then(data => renderMonsters(data))
 }
 eldenRingFetch();
-
+const displayImage = document.querySelector("body > div.display > div.img-display > img");
 
 const allMonsters = document.querySelector("#all")
 function renderMonsters(monsters) {
     monsters.data.forEach((monster) =>  {
-        const p = document.createElement('p')
-        const div = document.createElement('div')
+        const pName = document.createElement('p')
+        const divCard = document.createElement('div')
         const contain = document.createElement('div')
         const img = document.createElement('img')
-        p.textContent = monster.name
-        console.log(p)
+        pName.textContent = monster.name
+        console.log(pName)
         img.src = monster.image
         img.alt = "Avatar"
         
         img.className = "profile"
-        p.className = "name"
-        div.className = "card"
+        pName.className = "name"
+        divCard.className = "card"
         contain.className = "container"
         
-        contain.append(p)
-        div.append(img)
-        div.append(contain)
-        allMonsters.append(div) 
+        contain.append(pName)
+        divCard.append(img)
+        divCard.append(contain)
+        allMonsters.append(divCard) 
 
-        
+        divCard.addEventListener ("click", () => {
+            displayImage.src = img.src
+
+        })
     })
     //removes duplicate
     document.querySelector("#all > div:nth-child(3)").remove()
