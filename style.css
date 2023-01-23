@@ -22,12 +22,18 @@ body {
   }
   .card:hover {
     box-shadow: 0 12px 24px 0 rgba(255, 0, 0, 0.747);
+    scale: 110%;
     
   }
   .container {
     padding: 2px 16px;
     background-color: white;
     border-radius: 5px;
+  }
+
+  .title {
+    text-align: center;
+    color: white;
   }
 
 
