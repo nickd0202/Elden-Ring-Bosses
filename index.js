@@ -5,7 +5,22 @@ function eldenRingFetch() {
     .then(data => renderMonsters(data))
 }
 eldenRingFetch();
+
+
 const displayImage = document.querySelector("body > div.display > div.img-display > img");
+
+
+const statsName = document.querySelector("body > div.display > div.stats > h3:nth-child(1) > p")
+const statsRegion = document.querySelector("body > div.display > div.stats > h3:nth-child(2) > p")
+const statsDes = document.querySelector("body > div.display > div.stats > h3:nth-child(3) > p")
+const statsLocation = document.querySelector("body > div.display > div.stats > h3:nth-child(4) > p")
+const statsDrop = document.querySelector("body > div.display > div.stats > h3:nth-child(5) > p")
+const statsHealth = document.querySelector("body > div.display > div.stats > h3:nth-child(6) > p")
+
+
+
+
+
 
 const allMonsters = document.querySelector("#all")
 function renderMonsters(monsters) {
@@ -31,7 +46,12 @@ function renderMonsters(monsters) {
 
         divCard.addEventListener ("click", () => {
             displayImage.src = img.src
-
+            statsName.textContent = monster.name
+            statsRegion.textContent = monster.region 
+            statsDes.textContent = monster.description
+            statsLocation.textContent = monster.location 
+            statsDrop.textContent = monster.drops 
+            statsHealth.textContent = monster.healthPoints
         })
     })
     //removes duplicate
