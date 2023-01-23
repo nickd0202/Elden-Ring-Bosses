@@ -34,6 +34,8 @@ function renderMonsters(monsters) {
     document.querySelector("#all > div:nth-child(10)").remove()
     document.querySelector("#all > div:nth-child(1) > img").src = "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lesser_abductor_virgin_enemies_elden_ring_wiki_600px.jpg"
 
+
+    
 }
 
 

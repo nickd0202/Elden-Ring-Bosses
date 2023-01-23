@@ -4,3 +4,15 @@
     
 }
 
+.card{
+    float: left;
+    width: 9%;
+    margin: 10px;
+    border: white
+}
+
+body {
+    background-image: url('https://cdn.mos.cms.futurecdn.net/8gWTFzyHLQXnTGiVhRLeea-1200-80.jpg');
+    background-size: 100%;
+}
+
