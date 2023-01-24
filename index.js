@@ -7,7 +7,7 @@ function eldenRingFetch() {
 eldenRingFetch();
 
 
-const displayImage = document.querySelector("body > div.display > div.img-display > img");
+const displayImage = document.querySelector("body > div.display > div.img-display > img")//.style.display = 'block';
 
 
 const statsName = document.querySelector("body > div.display > div.stats > p.name2")
@@ -67,4 +67,24 @@ function renderMonsters(monsters) {
 }
 
 
+    // const largeImage = document.querySelector("body > div.display > div.img-display > img")
+    // largeImage.addEventListener('mousemove', cardMouseMove)
 
+    // function cardMouseMove(event) {
+        // const picWidth = largeImage.offsetWidth;
+        // const picHeight = largeImage.offsetHeight;
+        // const centerX = largeImage.offsetLeft + picWidth/2;
+        // const centerY = largeImage.offsetTop + picHeight/2;
+        // const mouseX = event.clientX - centerX;
+        // console.log(mouseX)
+        // const mouseY = event.clientY - centerY;
+        // const rotateX = ((+1)*8*mouseY/(picHeight/2)).toFixed(2);
+        // const rotateY = ((-1)*8*mouseX/(picWidth/2)).toFixed(2);
+
+
+        // largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                                    // 
+        // 
+    // }
+    
+    //cardMouseMove()
