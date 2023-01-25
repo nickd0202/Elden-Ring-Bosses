@@ -22,6 +22,7 @@ const btn = document.querySelector("body > button")
 const stats = document.querySelector("body > div.display > div.stats")
 
 const allMonsters = document.querySelector("#all")
+
 function renderMonsters(monsters) {
     monsters.data.forEach((monster) =>  {
         const pName = document.createElement('p')
@@ -29,7 +30,6 @@ function renderMonsters(monsters) {
         const contain = document.createElement('div')
         const img = document.createElement('img')
         pName.textContent = monster.name
-        console.log(pName)
         img.src = monster.image
         img.alt = "Avatar"
         
@@ -43,6 +43,7 @@ function renderMonsters(monsters) {
         divCard.append(contain)
         allMonsters.append(divCard) 
 
+
         divCard.addEventListener ("click", () => {
             displayImage.src = img.src
             statsName.textContent = monster.name
@@ -51,7 +52,7 @@ function renderMonsters(monsters) {
             statsLocation.textContent = monster.location 
             statsDrop.textContent = monster.drops 
             statsHealth.textContent = monster.healthPoints
-        })
+        })      
     })
     //removes duplicate
     document.querySelector("#all > div:nth-child(3)").remove()
@@ -72,41 +73,47 @@ function renderMonsters(monsters) {
     document.querySelector("#all > div:nth-child(16) > img").src = 'https://www.gamerguides.com/assets/media/14/2253/cleanrot_knight.png'
     document.querySelector("#all > div:nth-child(17) > img").src = 'https://staticg.sportskeeda.com/editor/2022/06/7c130-16563483853112-1920.jpg'
     document.querySelector("#all > div:nth-child(18) > img").src = 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/07/elden-ring-commander-niall-1.jpg'
-
+    
+    darkMode();
+    // cardMouseMove()
 }   
 
 function darkMode() {
-    btn.addEventListener("click", () => {
-        if(btn.textContent === "Light Mode"){
-            btn.textContent = "Dark Mode"
-            document.body.style.backgroundImage = "url(https://eldenring.wiki.fextralife.com/file/Elden-Ring/lesser_abductor_virgin_enemies_elden_ring_wiki_600px.jpg)"
-            stats.style.color = "blue"
-        } else {
-            btn.textContent = "Light Mode"
-            document.body.style.backgroundImage = "url(https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg)"
-            stats.style.color = "red"
-        }
-    })
+        btn.addEventListener("click", () => {
+            if(btn.textContent === "Light Mode"){
+                btn.textContent = "Dark Mode"
+                document.body.style.backgroundImage = "url(https://eldenring.wiki.fextralife.com/file/Elden-Ring/lesser_abductor_virgin_enemies_elden_ring_wiki_600px.jpg)"
+                stats.style.color = "blue"
+                for (let i = 1; i <= 18; i++) {
+                    document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "blue"
+                }
+            } else {
+                btn.textContent = "Light Mode"
+                document.body.style.backgroundImage = "url(https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg)"
+                stats.style.color = "red"
+                for (let i = 1; i <= 18; i++) {
+                    document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "red"
+                }
+            }
+        })
+       
 }
 
-const largeImage = document.querySelector("body > div.display > div.img-display > img")
-largeImage.addEventListener('mousemove', cardMouseMove)
+// const largeImage = document.querySelector("body > div.display > div.img-display > img")
+// largeImage.addEventListener('mousemove', cardMouseMove)
 
-function cardMouseMove(event) {
-    const picWidth = largeImage.offsetWidth;
-    const picHeight = largeImage.offsetHeight;
-    const centerX = largeImage.offsetLeft + picWidth/2;
-    const centerY = largeImage.offsetTop + picHeight/2;
-    const mouseX = event.clientX - centerX;
-    console.log(mouseX)
-    const mouseY = event.clientY - centerY;
-    const rotateX = ((+1)*6*mouseY/(picHeight/2)).toFixed(2);
-    const rotateY = ((-1)*6*mouseX/(picWidth/2)).toFixed(2);
+// function cardMouseMove(event) {
+//     const picWidth = largeImage.offsetWidth;
+//     const picHeight = largeImage.offsetHeight;
+//     const centerX = largeImage.offsetLeft + picWidth/2;
+//     const centerY = largeImage.offsetTop + picHeight/2;
+//     const mouseX = event.clientX - centerX;
+//     const mouseY = event.clientY - centerY;
+//     const rotateX = ((+1)*6*mouseY/(picHeight/2)).toFixed(2);
+//     const rotateY = ((-1)*6*mouseX/(picWidth/2)).toFixed(2);
 
 
-    largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+//     largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                                     
         
-}
-
-cardMouseMove()
+// }
