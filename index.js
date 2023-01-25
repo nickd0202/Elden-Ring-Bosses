@@ -82,10 +82,11 @@ function darkMode() {
         btn.addEventListener("click", () => {
             if(btn.textContent === "Light Mode"){
                 btn.textContent = "Dark Mode"
-                document.body.style.backgroundImage = "url(https://eldenring.wiki.fextralife.com/file/Elden-Ring/lesser_abductor_virgin_enemies_elden_ring_wiki_600px.jpg)"
-                stats.style.color = "blue"
+                document.body.style.backgroundImage = "url(https://cdn.mos.cms.futurecdn.net/vj2PeBRRk4zeDg8rw2h7vG.png)"
+                stats.style.color = "white"
                 for (let i = 1; i <= 18; i++) {
                     document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "blue"
+                    document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "white"
                 }
             } else {
                 btn.textContent = "Light Mode"
@@ -93,6 +94,7 @@ function darkMode() {
                 stats.style.color = "red"
                 for (let i = 1; i <= 18; i++) {
                     document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "red"
+                    document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "black"
                 }
             }
         })
