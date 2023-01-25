@@ -17,10 +17,9 @@ const statsLocation = document.querySelector("body > div.display > div.stats > p
 const statsDrop = document.querySelector("body > div.display > div.stats > p.drop")
 const statsHealth = document.querySelector("body > div.display > div.stats > p.health")
 
+const btn = document.querySelector("body > button")
 
-
-
-
+const stats = document.querySelector("body > div.display > div.stats")
 
 const allMonsters = document.querySelector("#all")
 function renderMonsters(monsters) {
@@ -59,32 +58,43 @@ function renderMonsters(monsters) {
     document.querySelector("#all > div:nth-child(10)").remove()
     document.querySelector("#all > div:nth-child(1) > img").src = "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lesser_abductor_virgin_enemies_elden_ring_wiki_600px.jpg"
     
-    //If we want to change out the images that are fuzzy
-    //document.querySelector("#all > div:nth-child(2)").remove();
-    //document.querySelector("#all > div:nth-child(2) > img").src = "https://www.gamerguides.com/assets/media/14/451/alecto_black_knife_ringleader.png"
-
     
+    
+    
+    darkMode();
 }
 
+function darkMode() {
+    btn.addEventListener("click", () => {
+        if(btn.textContent === "Light Mode"){
+            btn.textContent = "Dark Mode"
+            document.body.style.backgroundImage = "url(https://eldenring.wiki.fextralife.com/file/Elden-Ring/lesser_abductor_virgin_enemies_elden_ring_wiki_600px.jpg)"
+            stats.style.color = "blue"
+        } else {
+            btn.textContent = "Light Mode"
+            document.body.style.backgroundImage = "url(https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg)"
+            stats.style.color = "red"
 
-    // const largeImage = document.querySelector("body > div.display > div.img-display > img")
-    // largeImage.addEventListener('mousemove', cardMouseMove)
+        }
+    })
+}
+    const largeImage = document.querySelector("body > div.display > div.img-display > img")
+    largeImage.addEventListener('mousemove', cardMouseMove)
 
     // function cardMouseMove(event) {
-        // const picWidth = largeImage.offsetWidth;
-        // const picHeight = largeImage.offsetHeight;
-        // const centerX = largeImage.offsetLeft + picWidth/2;
-        // const centerY = largeImage.offsetTop + picHeight/2;
-        // const mouseX = event.clientX - centerX;
-        // console.log(mouseX)
-        // const mouseY = event.clientY - centerY;
-        // const rotateX = ((+1)*8*mouseY/(picHeight/2)).toFixed(2);
-        // const rotateY = ((-1)*8*mouseX/(picWidth/2)).toFixed(2);
+    //     const picWidth = largeImage.offsetWidth;
+    //     const picHeight = largeImage.offsetHeight;
+    //     const centerX = largeImage.offsetLeft + picWidth/2;
+    //     const centerY = largeImage.offsetTop + picHeight/2;
+    //     const mouseX = event.clientX - centerX;
+    //     console.log(mouseX)
+    //     const mouseY = event.clientY - centerY;
+    //     const rotateX = ((+1)*8*mouseY/(picHeight/2)).toFixed(2);
+    //     const rotateY = ((-1)*8*mouseX/(picWidth/2)).toFixed(2);
 
 
-        // largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                                    // 
-        // 
+    //     largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                                    
+        
     // }
     
-    //cardMouseMove()
