@@ -1,76 +1,111 @@
 .profile {
-    width: 100%;
-    height: 73%;
-    border-radius: 5px; 
+  width: 100%;
+  height: 73%;
+  border-radius: 5px 5px 0 0;
 }
 
 body {
-        background-image: url("https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg");
-        background-size:auto;
-        /* color: rgb(216, 37, 37); */
+  background-image: url("https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg");
+  /* background-size:auto; */
+  background-size: cover;
 }
 
 .card {
-    /* Add shadows to create the "card" effect */
-    float: left;
-    width: 9%;
-    height: 270px;
-    margin: 1%;
-    box-shadow: 0 4px 8px 0 rgba(0, 68, 255);
-    transition: 0.3s;
-  }
+  /* Add shadows to create the "card" effect */
+  float: left;
+  width: 9%;
+  height:275px;
+  margin: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 68, 255);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
 
-  .card:hover {
-    box-shadow: 0 12px 24px 0 rgb(255, 0, 0);
-    scale: 110%;
-    transition: 1s;
+.card:hover {
+  box-shadow: 0 12px 24px 0 rgb(255, 0, 0);
+  scale: 110%;
+  transition: 0.5s;
     
-  }
+}
+.name{
+  text-align: center;
+}
+.container {
+  padding: 2px 16px;
+  height: 72px;
+  background-color: rgb(0, 0, 0);
+  color: red;
+}
 
-  .container {
-    padding: 2px 16px;
-    height: 65px;
-    background-color: rgb(0, 0, 0);
-    color: red;
-    border: 5px; 
-  }
-
-  .title {
-    text-align: center;
-    color: white;
-  }
+.title {
+  text-align: center;
+  color: white;
+}
   
-  
-  .title:hover {
-    color: red;
-    text-shadow:  7px rgb(201, 41, 41),
-    0 0 10px rgb(196, 29, 29),
-    0 0 21px rgb(198, 31, 31);
-    scale: 125%;
-    transition: 3s;
-  }
+/* change to js */
+.title:hover {
+  color: red;
+  text-shadow:  7px rgb(201, 41, 41),
+  0 0 10px rgb(196, 29, 29),
+  0 0 21px rgb(198, 31, 31);
+  scale: 125%;
+  transition: 3s;
+}
 
-  .stats {
-    /* background-color: rgb(245, 239, 239); */
-    color: red;
-    float: right;
-    width: 35%;
-    margin: 1%;
-    padding: 3px 20px;
-    border-radius: 5px;
-    border: 0px;
-    margin-right: 15%;
-  }
+.stats {
+  /* background-color: rgb(245, 239, 239); */
+  color: red;
+  float: right;
+  width: 35%;
+  margin: 1%;
+  padding: 3px 20px;
+  border-radius: 5px;
+  border: 0px;
+  margin-right: 15%;
+  display: none;
+}
 
-  .large-image{
-    width: 25%;
-    height: 650px;
-    border-radius: 5px;
-    float:left;
-    margin: 1.5%;
-    margin-left: 17%;
-    transform: perspective(1000px);
-  }
+.large-image{
+  width: 25%;
+  height: 650px;
+  border-radius: 5px;
+  float:left;
+  margin: 1.5%;
+  margin-left: 17%;
+  transform: perspective(1000px);
+}
 
+.modeButton{
+  --c: #fff;
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat, #ff0303;
+  color: #0000;    
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: 
+  calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c), 
+  calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+  outline-offset:  .1em;
+  transition: 0.3s;
+}
 
+.modeButton:hover, .modeButton:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
 
+.modeButton:active{
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9q #0003;
+  transition: 0s;
+}
+
+.modeButton{
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 0;
+  cursor: pointer;
+  padding: .1em, .3em;
+}
