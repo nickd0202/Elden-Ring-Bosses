@@ -53,6 +53,7 @@ function renderMonsters(monsters) {
             statsLocation.textContent = monster.location 
             statsDrop.textContent = monster.drops 
             statsHealth.textContent = monster.healthPoints
+            stats.style.display = "block"
         })      
     })
     //removes duplicate
@@ -76,48 +77,68 @@ function renderMonsters(monsters) {
     document.querySelector("#all > div:nth-child(18) > img").src = 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/07/elden-ring-commander-niall-1.jpg'
     
     darkMode();
-    // cardMouseMove()
+    cardMouseMove()
 }   
 
 function darkMode() {
-        btn.addEventListener("click", () => {
-            if(btn.textContent === "Light Mode"){
-                btn.textContent = "Dark Mode"
-                document.body.style.backgroundImage = "url(https://cdn.mos.cms.futurecdn.net/vj2PeBRRk4zeDg8rw2h7vG.png)"
-                stats.style.color = "white"
-                for (let i = 1; i <= 18; i++) {
-                    document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "blue"
-                    document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "white"
+    btn.addEventListener("click", () => {
+        if(btn.textContent === "Light Mode"){
+            btn.textContent = "Dark Mode"
+            document.body.style.backgroundImage = "url(https://cdn.mos.cms.futurecdn.net/vj2PeBRRk4zeDg8rw2h7vG.png)"
+            stats.style.color = "white"
+            for (let i = 1; i <= 18; i++) {
+                document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "blue"
+                document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "white"
+                document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 4px 8px 0 rgb(255, 0, 0)" 
+                
+                let card = document.querySelector(`#all > div:nth-child(${i})`)
+                
+                card.addEventListener("mouseover", () => {
+                    document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 12px 24px 0 rgba(0, 68, 255)"
+                })
+                
+                card.addEventListener('mouseout', () => {
                     document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 4px 8px 0 rgb(255, 0, 0)"
-                }
-            } else {
-                btn.textContent = "Light Mode"
-                document.body.style.backgroundImage = "url(https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg)"
-                stats.style.color = "red"
-                for (let i = 1; i <= 18; i++) {
-                    document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "red"
-                    document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "black"
-                }
+                })
             }
-        })
-       
-}
+        } else {
+            
+            btn.textContent = "Light Mode"
+            document.body.style.backgroundImage = "url(https://images.wallpapersden.com/image/download/elden-ring-hd-age-of-stars_bWduZ2mUmZqaraWkpJRnamtlrWZpaWU.jpg)"
+            stats.style.color = "red"
+            for (let i = 1; i <= 18; i++) {
+                document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "red"
+                document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "black"
+                document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 4px 8px 0 rgba(0, 68, 255)"
+                
+                let card = document.querySelector(`#all > div:nth-child(${i})`)
+                
+                card.addEventListener("mouseover", () => {
+                    document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 12px 24px 0 rgb(255, 0, 0)"
+                })
+                
+                card.addEventListener('mouseout', () => {
+                    document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 4px 8px 0 rgba(0, 68, 255)"
+                })
+            }
+        }
+    }) 
+} 
+const largeImage = document.querySelector("body > div.display > div.img-display > img")
+largeImage.addEventListener('mousemove', cardMouseMove)
 
-// const largeImage = document.querySelector("body > div.display > div.img-display > img")
-// largeImage.addEventListener('mousemove', cardMouseMove)
-
-// function cardMouseMove(event) {
-//     const picWidth = largeImage.offsetWidth;
-//     const picHeight = largeImage.offsetHeight;
-//     const centerX = largeImage.offsetLeft + picWidth/2;
-//     const centerY = largeImage.offsetTop + picHeight/2;
-//     const mouseX = event.clientX - centerX;
-//     const mouseY = event.clientY - centerY;
-//     const rotateX = ((+1)*6*mouseY/(picHeight/2)).toFixed(2);
-//     const rotateY = ((-1)*6*mouseX/(picWidth/2)).toFixed(2);
+function cardMouseMove(event) {
+    const picWidth = largeImage.offsetWidth;
+    const picHeight = largeImage.offsetHeight;
+    const centerX = largeImage.offsetLeft + picWidth/2;
+    const centerY = largeImage.offsetTop + picHeight/2;
+    const mouseX = event.clientX - centerX;
+    const mouseY = event.clientY - centerY;
+    const rotateX = ((+1)*6*mouseY/(picHeight/2)).toFixed(2);
+    const rotateY = ((-1)*6*mouseX/(picWidth/2)).toFixed(2);
 
 
-//     largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                                     
         
-// }
+}
