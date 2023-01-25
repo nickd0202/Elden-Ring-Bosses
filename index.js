@@ -24,6 +24,7 @@ const stats = document.querySelector("body > div.display > div.stats")
 const allMonsters = document.querySelector("#all")
 
 function renderMonsters(monsters) {
+    displayImage.src = "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png"
     monsters.data.forEach((monster) =>  {
         const pName = document.createElement('p')
         const divCard = document.createElement('div')
@@ -87,6 +88,7 @@ function darkMode() {
                 for (let i = 1; i <= 18; i++) {
                     document.querySelector(`#all > div:nth-child(${i}) > div > p`).style.color = "blue"
                     document.querySelector(`#all > div:nth-child(${i}) > div`).style.backgroundColor = "white"
+                    document.querySelector(`#all > div:nth-child(${i})`).style["boxShadow"] = "0 4px 8px 0 rgb(255, 0, 0)"
                 }
             } else {
                 btn.textContent = "Light Mode"
