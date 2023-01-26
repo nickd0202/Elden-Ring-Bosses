@@ -77,7 +77,6 @@ function renderMonsters(monsters) {
     document.querySelector("#all > div:nth-child(18) > img").src = 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/07/elden-ring-commander-niall-1.jpg'
     
     darkMode();
-    cardMouseMove()
 }   
 
 function darkMode() {
@@ -125,20 +124,20 @@ function darkMode() {
     }) 
 } 
 const largeImage = document.querySelector("body > div.display > div.img-display > img")
-largeImage.addEventListener('mousemove', cardMouseMove)
+// largeImage.addEventListener('mousemove', cardMouseMove)
 
-function cardMouseMove(event) {
+largeImage.addEventListener('mousemove', (event) => {
     const picWidth = largeImage.offsetWidth;
     const picHeight = largeImage.offsetHeight;
     const centerX = largeImage.offsetLeft + picWidth/2;
     const centerY = largeImage.offsetTop + picHeight/2;
     const mouseX = event.clientX - centerX;
     const mouseY = event.clientY - centerY;
-    const rotateX = ((+1)*6*mouseY/(picHeight/2)).toFixed(2);
-    const rotateY = ((-1)*6*mouseX/(picWidth/2)).toFixed(2);
+    const rotateX = ((+1)*7*mouseY/(picHeight/2)).toFixed(2);
+    const rotateY = ((-1)*7*mouseX/(picWidth/2)).toFixed(2);
 
 
     largeImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
                                     
         
-}
+})
